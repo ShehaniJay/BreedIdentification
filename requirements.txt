@@ -4,6 +4,6 @@ pillow
 joblib
 scikit-learn
 tensorflow
-h5py
+
 
 
