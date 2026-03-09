@@ -16,7 +16,7 @@ st.write("Upload an image of your pet to identify its breed.")
 # ------------------------
 @st.cache_resource
 def load_breed_model():
-    model = tf.keras.models.load_model("pet_breed_model.keras", compile=False)
+    model = tf.keras.models.load_model("pet_breed_model.h5", compile=False)
     return model
 
 breed_model = load_breed_model()
@@ -42,4 +42,5 @@ if uploaded_file is not None:
         predicted_class = class_names[np.argmax(prediction)]
 
     st.success(f"Predicted Breed: {predicted_class}")
+
     st.info(f"Confidence: {confidence*100:.2f}%")
